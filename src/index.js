@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/themes/bootswatch/flatly/bootstrap.css';
+import './assets/templates/royalui/template//vendors/ti-icons/css/themify-icons.css';
+import './assets/templates/royalui/template//vendors/base/vendor.bundle.base.css';
+import './assets/templates/royalui/template//css/style.css';
 import App from './screens/App';
 import * as ServiceWorker from './services/ServiceWorker';
 

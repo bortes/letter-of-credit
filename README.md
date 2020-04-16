@@ -51,5 +51,6 @@ Estrutura reorganizada
 + services
 + stores
 
+A aplicação foi desenvolvida baseada no framework [Bootstrap](https://getbootstrap.com/), aperência nos temas da [Bootswatch](https://bootswatch.com/) e no template [RoyalUI](https://github.com/BootstrapDash/RoyalUI-Free-Bootstrap-Admin-Template).
 
-
+Os gráficos empregados foram construídos fazendo uso dos componentes do [Recharts](http://recharts.org/en-US/), este construído sobre o [D3.js - Data-Driven Documents](https://d3js.org/). Mais informações sobre os componentes aplicados para os gráfico pode ser obtida no [bit](https://bit.dev/recharts/). Veja também dicas para escolha do gráfico em [Como escolher o gráfico certo para seus dados](https://infogram.com/pt/pagina/escolha-grafico-de-visualizacoes-certo).

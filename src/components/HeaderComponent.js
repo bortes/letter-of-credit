@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Logo from '../logo.svg';
+import Logo from '../assets/images/logo.svg';
 
 /**
  * Componente responsavel por exibir o cabecalho da pagina.
@@ -30,10 +30,13 @@ class HeaderComponent extends Component {
                 <div className="collapse navbar-collapse" id="navbarColor01">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <a className="nav-link h5" href="#">Home <span className="sr-only">(current)</span></a>
+                            <a className="nav-link h5" href="#">DASHBOARD <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link h5" href="#">Trade</a>
+                            <a className="nav-link h5" href="#">TRADE TRANSACTIONS</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link h5" href="#">REFER COUNTERPARTY</a>
                         </li>
                     </ul>
                 </div>
