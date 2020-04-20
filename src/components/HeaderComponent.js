@@ -38,13 +38,13 @@ function HeaderComponent(props) {
     return (
         <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <buttom className="navbar-brand brand-logo hover-cursor" title="contrair menu" onClick={handleToggleMenu}>
+                <button className="navbar-brand brand-logo btn btn-link" title="contrair menu" onClick={handleToggleMenu}>
                     <img src={Logo} width="60" height="60" alt="logo" className="w-auto mr-3" />
                     <span className=" d-inline mb-0">LETTER of CREDIT</span>
-                </buttom>
-                <buttom className="navbar-brand brand-logo-mini hover-cursor" title="expandir menu" onClick={handleToggleMenu}>
+                </button>
+                <button className="navbar-brand brand-logo-mini btn btn-link" title="expandir menu" onClick={handleToggleMenu}>
                     <img src={Logo} width="60" height="60" alt="logo" className="w-auto mr-3" />
-                </buttom>
+                </button>
             </div>
             <div className="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <ul className="navbar-nav mr-lg-2">
@@ -61,13 +61,13 @@ function HeaderComponent(props) {
                 </ul>
                 <ul className="navbar-nav navbar-nav-right">
                     <li className={isNotifyMenuOpen ? "nav-item dropdown show" : "nav-item dropdown"}>
-                        <buttom className="nav-link count-indicator dropdown-toggle hover-cursor" data-toggle="dropdown" id="notifyDropdown" aria-expanded={isNotifyMenuOpen} onClick={handleToggleNotifyMenu}>
+                        <button className="nav-link count-indicator dropdown-toggle btn btn-link" data-toggle="dropdown" id="notifyDropdown" aria-expanded={isNotifyMenuOpen} onClick={handleToggleNotifyMenu}>
                             <i className="ti-bell mx-0"></i>
                             <span className="count"></span>
-                        </buttom>
+                        </button>
                         <div className={isNotifyMenuOpen ? "dropdown-menu dropdown-menu-right navbar-dropdown show" : "dropdown-menu dropdown-menu-right navbar-dropdown"} aria-labelledby="notifyDropdown">
                             <p className="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                            <buttom className="dropdown-item">
+                            <button className="dropdown-item">
                                 <div className="item-thumbnail">
                                     <div className="item-icon bg-success">
                                         <i className="ti-info-alt mx-0"></i>
@@ -79,8 +79,8 @@ function HeaderComponent(props) {
                                         Just now
                                     </p>
                                 </div>
-                            </buttom>
-                            <buttom className="dropdown-item">
+                            </button>
+                            <button className="dropdown-item">
                                 <div className="item-thumbnail">
                                     <div className="item-icon bg-warning">
                                         <i className="ti-settings mx-0"></i>
@@ -92,8 +92,8 @@ function HeaderComponent(props) {
                                         Private message
                                     </p>
                                 </div>
-                            </buttom>
-                            <buttom className="dropdown-item">
+                            </button>
+                            <button className="dropdown-item">
                                 <div className="item-thumbnail">
                                     <div className="item-icon bg-info">
                                         <i className="ti-user mx-0"></i>
@@ -105,13 +105,13 @@ function HeaderComponent(props) {
                                         2 days ago
                                     </p>
                                 </div>
-                            </buttom>
+                            </button>
                         </div>
                     </li>
                     <li className={isProfileMenuOpen ? "nav-item nav-profile dropdown show" : "nav-item nav-profile dropdown"}>
-                        <buttom className="nav-link dropdown-toggle hover-cursor" data-toggle="dropdown" id="profileDropdown" aria-expanded={isProfileMenuOpen} onClick={handleToggleProfileMenu}>
+                        <button className="nav-link dropdown-toggle btn btn-link" data-toggle="dropdown" id="profileDropdown" aria-expanded={isProfileMenuOpen} onClick={handleToggleProfileMenu}>
                             <img src={Avatar} alt="profile" />
-                        </buttom>
+                        </button>
                         <div className={isProfileMenuOpen ? "dropdown-menu dropdown-menu-right navbar-dropdown show" : "dropdown-menu dropdown-menu-right navbar-dropdown"} aria-labelledby="profileDropdown">
                             <Link className="dropdown-item" to="/settings">
                                 <i className="ti-settings text-primary"></i>
