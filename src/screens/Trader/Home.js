@@ -1,11 +1,12 @@
 import React from 'react';
-import PageComponent from '../../components/PageComponent';
+import PageComponent from '../../components/Common/Page';
 import {
     ComposedChart, Legend,
     AreaChart, Area,
     PieChart, Pie,
     LineChart, Line,
     BarChart, Bar,
+    ResponsiveContainer
 } from 'recharts';
 
 
@@ -127,17 +128,21 @@ function ScreensTraderHome(props) {
                 <div className="col-md-2 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
-                            <p className="card-title text-md-center text-xl-left">A CAMINHO</p>
+                            <p className="card-title text-md-center text-xl-left h-15">A CAMINHO</p>
                             <div className="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                 <h3 className="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">10101</h3>
                                 <i className="ti-direction icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
-                            <PieChart width={200} height={80}
-                                margin={{
-                                    top: 0, right: 0, bottom: 0, left: 0,
-                                }}>
-                                <Pie dataKey="value" startAngle={180} endAngle={0} data={dataACaminho} cy={80} innerRadius={60} outerRadius={80} />
-                            </PieChart>
+                            <div style={{ height: 80 }}>
+                                <ResponsiveContainer>
+                                    <PieChart
+                                        margin={{
+                                            top: 0, right: 0, bottom: 0, left: 0,
+                                        }}>
+                                        <Pie dataKey="value" startAngle={180} endAngle={0} data={dataACaminho} cy={80} innerRadius={60} outerRadius={80} />
+                                    </PieChart>
+                                </ResponsiveContainer>
+                            </div>
                             <p className="mb-0 mt-2 text-danger">0.20% <span className="text-black ml-1"><small>(30 days)</small></span></p>
                         </div>
                     </div>
@@ -145,14 +150,18 @@ function ScreensTraderHome(props) {
                 <div className="col-md-2 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
-                            <p className="card-title text-md-center text-xl-left">AGUARDANDO</p>
+                            <p className="card-title text-md-center text-xl-left h-15">AGUARDANDO</p>
                             <div className="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                 <h3 className="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">10101</h3>
                                 <i className="ti-time icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
-                            <LineChart width={200} height={80} data={dataAguardando}>
-                                <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-                            </LineChart>
+                            <div style={{ height: 80 }}>
+                                <ResponsiveContainer>
+                                    <LineChart data={dataAguardando}>
+                                        <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            </div>
                             <p className="mb-0 mt-2 text-danger">0.20% <span className="text-black ml-1"><small>(30 days)</small></span></p>
                         </div>
                     </div>
@@ -160,14 +169,18 @@ function ScreensTraderHome(props) {
                 <div className="col-md-2 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
-                            <p className="card-title text-md-center text-xl-left">CARREGANDO</p>
+                            <p className="card-title text-md-center text-xl-left h-15">CARREGANDO</p>
                             <div className="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                 <h3 className="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">10101</h3>
                                 <i className="ti-anchor icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
-                            <LineChart width={200} height={80} data={dataAguardando}>
-                                <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
-                            </LineChart>
+                            <div style={{ height: 80 }}>
+                                <ResponsiveContainer>
+                                    <LineChart data={dataAguardando}>
+                                        <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            </div>
                             <p className="mb-0 mt-2 text-danger">0.20% <span className="text-black ml-1"><small>(30 days)</small></span></p>
                         </div>
                     </div>
@@ -175,14 +188,18 @@ function ScreensTraderHome(props) {
                 <div className="col-md-2 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
-                            <p className="card-title text-md-center text-xl-left">BANCO</p>
+                            <p className="card-title text-md-center text-xl-left h-15">BANCO</p>
                             <div className="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                 <h3 className="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">10101</h3>
                                 <i className="ti-medall icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
-                            <BarChart width={200} height={80} data={dataBancos}>
-                                <Bar dataKey="uv" fill="#8884d8" />
-                            </BarChart>
+                            <div style={{ height: 80 }}>
+                                <ResponsiveContainer>
+                                    <BarChart data={dataBancos}>
+                                        <Bar dataKey="uv" fill="#8884d8" />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
                             <p className="mb-0 mt-2 text-danger">0.20% <span className="text-black ml-1"><small>(30 days)</small></span></p>
                         </div>
                     </div>
@@ -190,15 +207,19 @@ function ScreensTraderHome(props) {
                 <div className="col-md-2 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
-                            <p className="card-title text-md-center text-xl-left">DOCUMENTOS RECEBIDOS</p>
+                            <p className="card-title text-md-center text-xl-left h-15">DOCUMENTOS RECEBIDOS</p>
                             <div className="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                 <h3 className="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">10101</h3>
                                 <i className="ti-clipboard icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
-                            <ComposedChart width={200} height={80} data={dataDocumentos}>
-                                <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-                                <Line type="monotone" dataKey="uv" stroke="#ff7300" />
-                            </ComposedChart>
+                            <div style={{ height: 80 }}>
+                                <ResponsiveContainer>
+                                    <ComposedChart data={dataDocumentos}>
+                                        <Bar dataKey="pv" barSize={20} fill="#413ea0" />
+                                        <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+                                    </ComposedChart>
+                                </ResponsiveContainer>
+                            </div>
                             <p className="mb-0 mt-2 text-danger">0.20% <span className="text-black ml-1"><small>(30 days)</small></span></p>
                         </div>
                     </div>
@@ -206,14 +227,18 @@ function ScreensTraderHome(props) {
                 <div className="col-md-2 grid-margin stretch-card">
                     <div className="card">
                         <div className="card-body">
-                            <p className="card-title text-md-center text-xl-left">FINALIZADOS</p>
+                            <p className="card-title text-md-center text-xl-left h-15">FINALIZADOS</p>
                             <div className="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                 <h3 className="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">10101</h3>
                                 <i className="ti-wallet icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                             </div>
-                            <AreaChart width={200} height={80} data={dataFinalizado}>
-                                <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
-                            </AreaChart>
+                            <div style={{ height: 80 }}>
+                                <ResponsiveContainer>
+                                    <AreaChart data={dataFinalizado}>
+                                        <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+                                    </AreaChart>
+                                </ResponsiveContainer>
+                            </div>
                             <p className="mb-0 mt-2 text-danger">0.20% <span className="text-black ml-1"><small>(30 days)</small></span></p>
                         </div>
                     </div>

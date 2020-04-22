@@ -29,7 +29,7 @@ function ScreensAuthLogin(props) {
     }
 
     if (isLogged) {
-        return <Redirect to="/trader" />;
+        return <Redirect to="/" />;
     }
 
     return (

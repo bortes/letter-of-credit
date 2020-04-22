@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import Logo from '../assets/images/logo.svg';
-import Avatar from '../assets/images/default-avatar.svg';
+import { Link, Redirect } from 'react-router-dom';
+import Logo from '../../assets/images/logo.svg';
+import Avatar from '../../assets/images/default-avatar.svg';
+import MainNavComponent from './MainNav';
+import * as authService from '../../services/ServiceAuth';
+
 
 /**
  * Componente responsavel por exibir o cabecalho da pagina.
@@ -35,15 +38,19 @@ function HeaderComponent(props) {
         setIsProfileMenuOpen(!isProfileMenuOpen);
     }
 
+    function handleLogout(event) {
+        authService.logout();
+    }
+
     return (
         <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <button className="navbar-brand brand-logo btn btn-link" title="contrair menu" onClick={handleToggleMenu}>
-                    <img src={Logo} width="60" height="60" alt="logo" className="w-auto mr-3" />
+                <button className="navbar-brand brand-logo btn btn-link pl-2" title="contrair menu" onClick={handleToggleMenu}>
+                    <img src={Logo} width="60" height="60" alt="logo" className="w-auto ml-4 mr-3" />
                     <span className=" d-inline mb-0">LETTER of CREDIT</span>
                 </button>
-                <button className="navbar-brand brand-logo-mini btn btn-link" title="expandir menu" onClick={handleToggleMenu}>
-                    <img src={Logo} width="60" height="60" alt="logo" className="w-auto mr-3" />
+                <button className="navbar-brand brand-logo-mini btn btn-link pl-2" title="expandir menu" onClick={handleToggleMenu}>
+                    <img src={Logo} width="60" height="60" alt="logo" className="w-auto ml-4 mr-3" />
                 </button>
             </div>
             <div className="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -60,6 +67,10 @@ function HeaderComponent(props) {
                     </li>
                 </ul>
                 <ul className="navbar-nav navbar-nav-right">
+                    <li id="main">
+                        <MainNavComponent />
+                    </li>
+
                     <li className={isNotifyMenuOpen ? "nav-item dropdown show" : "nav-item dropdown"}>
                         <button className="nav-link count-indicator dropdown-toggle btn btn-link" data-toggle="dropdown" id="notifyDropdown" aria-expanded={isNotifyMenuOpen} onClick={handleToggleNotifyMenu}>
                             <i className="ti-bell mx-0"></i>
@@ -117,7 +128,7 @@ function HeaderComponent(props) {
                                 <i className="ti-settings text-primary"></i>
                                 Settings
                             </Link>
-                            <Link className="dropdown-item" to="/settings">
+                            <Link className="dropdown-item" to="/" onClick={handleLogout}>
                                 <i className="ti-power-off text-primary"></i>
                                 Logout
                             </Link>

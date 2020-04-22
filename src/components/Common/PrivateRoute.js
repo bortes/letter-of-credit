@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import * as authService from '../services/ServiceAuth';
+import * as authService from '../../services/ServiceAuth';
 
 /**
  * Componente responsavel por controle das rotas com acesso restrito.
@@ -15,7 +15,7 @@ function PrivateRoute({ component: Component, ...rest }) {
                 authService.isAuthenticated() ? (
                     <Component {...props} />
                 ) : (
-                    <Redirect to="/" />
+                    <Redirect to="/login" />
                 )
             }
         />

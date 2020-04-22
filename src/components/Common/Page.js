@@ -1,7 +1,6 @@
 import React from 'react';
-import HeaderComponent from './HeaderComponent';
-import MainNavComponent from './MainNavComponent';
-import * as authService from '../services/ServiceAuth';
+import HeaderComponent from './Header';
+import * as authService from '../../services/ServiceAuth';
 
 /**
  * Componente responsavel por exibir a estrutura padrao da pagina.
@@ -16,9 +15,7 @@ function PageComponent(props) {
                 <HeaderComponent />
 
                 <div className="container-fluid page-body-wrapper">
-                    <MainNavComponent />
-
-                    <div className="main-panel">
+                    <div className="main-panel w-100">
                         <div className="content-wrapper">
                             {props.children}
                         </div>

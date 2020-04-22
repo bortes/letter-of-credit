@@ -1,3 +1,82 @@
 .auth-img-bg {
     background: #272727 url('./assets/images/login-bg.jpg') no-repeat center center;
 }
+
+.h-15 {
+    height: 15% !important;
+}
+
+
+.sidebar .nav .nav-item .nav-link .menu-title-acronym {
+    display: none;
+}
+
+/* LAPTOP */
+@media screen and (min-width: 992px) {
+    .sidebar {
+        background: transparent;
+        min-height: auto;
+        width: auto;
+    }
+    .sidebar .nav:not(.sub-menu) {
+        flex-direction: row;
+        margin-bottom: 0;
+        margin-top: 1.25rem;
+    }
+    .sidebar .nav .nav-item {
+        margin: 0 !important;
+    }
+    .sidebar .nav .nav-item .nav-link i.menu-icon {
+        font-size: 1.25rem;
+    }
+    .sidebar .nav .nav-item .nav-link .menu-title {
+        font-size: 1rem;
+    }
+    .sidebar .nav .nav-item .nav-link .menu-title-label {
+        display: none;
+    }
+    .sidebar .nav .nav-item .nav-link .menu-title-acronym {
+        display: inline-block;
+    }
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group {
+        width: 240px;
+    }
+}
+
+/* DESKTOP L */
+@media screen and (min-width: 1025px) {
+    .sidebar .nav:not(.sub-menu) {
+        margin-top: 1.25rem;
+    }
+    .sidebar .nav .nav-item .nav-link i.menu-icon {
+        font-size: 1.25rem;
+    }
+    .sidebar .nav .nav-item .nav-link .menu-title {
+        font-size: 1rem;
+    }
+    .sidebar .nav .nav-item .nav-link .menu-title-label {
+        display: inline-block;
+    }
+    .sidebar .nav .nav-item .nav-link .menu-title-acronym {
+        display: none;
+    }
+}
+
+/* DESKTOP 4K */
+@media screen and (min-width: 1441px) {
+    .sidebar .nav:not(.sub-menu) {
+        margin-top: 1rem;
+    }
+    .sidebar .nav .nav-item .nav-link i.menu-icon {
+        font-size: 1.5rem;
+    }
+    .sidebar .nav .nav-item .nav-link .menu-title {
+        font-size: 1.1rem;
+    }
+    .sidebar .nav .nav-item .nav-link .menu-title-label {
+        display: inline-block;
+    }
+    .sidebar .nav .nav-item .nav-link .menu-title-acronym {
+        display: none;
+    }
+}
