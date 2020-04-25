@@ -82,7 +82,7 @@ function ScreensAuthLogin(props) {
                                             <button className="btn btn-block btn-dark btn-lg font-weight-medium auth-form-btn">LOGIN</button>
                                         </div>
                                         <p className="card-description">
-                                            Não possui usuário? <Link className="text-danger" to="/signup">Cadastre-se aqui</Link>.
+                                            Não possui usuário? <Link className="text-danger" to="/signup">Entre em contato para obter sua conta.</Link>.
                                         </p>
                                     </form>
                                 </div>
