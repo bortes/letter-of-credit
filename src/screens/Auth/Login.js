@@ -37,13 +37,13 @@ function ScreensAuthLogin(props) {
             <div className="container-fluid page-body-wrapper full-page-wrapper">
                 <div className="content-wrapper d-flex align-items-stretch auth auth-img-bg">
                     <div className="row flex-grow">
-                        <div className="col-lg-12 d-flex align-items-center justify-content-center">
+                        <div className="col-10 offset-1 d-flex align-items-center justify-content-center">
                             <div className="card p-2">
                                 <div className="card-body">
                                     <div className="card-title">
                                         <h1 className="h3">
                                             <img src={Logo} width="60" height="60" className="mr-3" alt="logo" />
-                                            LETTER of CREDIT
+                                            SILK ROAD VAULT
                                         </h1>
                                     </div>
                                     {

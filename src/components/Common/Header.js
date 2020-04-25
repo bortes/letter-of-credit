@@ -47,10 +47,11 @@ function HeaderComponent(props) {
             <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
                 <button className="navbar-brand brand-logo btn btn-link pl-2" title="contrair menu" onClick={handleToggleMenu}>
                     <img src={Logo} width="60" height="60" alt="logo" className="w-auto ml-4 mr-3" />
-                    <span className=" d-inline mb-0">LETTER of CREDIT</span>
+                    <span className="d-inline mb-0">SILK ROAD VAULT</span>
                 </button>
                 <button className="navbar-brand brand-logo-mini btn btn-link pl-2" title="expandir menu" onClick={handleToggleMenu}>
                     <img src={Logo} width="60" height="60" alt="logo" className="w-auto ml-4 mr-3" />
+                    <span className="d-inline mb-0">SRV</span>
                 </button>
             </div>
             <div className="navbar-menu-wrapper d-flex align-items-center justify-content-end">
