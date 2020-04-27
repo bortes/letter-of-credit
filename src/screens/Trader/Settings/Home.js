@@ -1,26 +1,26 @@
-import React from "react";
-import PageComponent from '../components/Common/Page';
+import React from 'react';
+import PageComponent from '../../../components/Common/Page';
 
 /**
- * Componente responsavel por exibir a pagina para conteudo nao encontrado.
+ * Componente responsavel por exibir a pagina principal para o modulo de configuracao.
  *
  * @param props parametros do componente
  * @author bortes
  */
-function NotFoundLogin(props) {
+function ScreensSettingsHome(props) {
     return (
         <PageComponent>
             <div className="row">
                 <div className="col-md-12 grid-margin">
                     <div className="d-flex justify-content-between align-items-center">
                         <div>
-                            <h2 className="font-weight-bold mb-0">Pagina nao encontrada</h2>
+                            <h2 className="font-weight-bold mb-0">Configurações pessoais</h2>
                         </div>
                     </div>
                 </div>
             </div>
-        </PageComponent >
+        </PageComponent>
     );
 }
 
-export default NotFoundLogin;
+export default ScreensSettingsHome;
