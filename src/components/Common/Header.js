@@ -13,8 +13,9 @@ import * as authService from '../../services/ServiceAuth';
  * @author bortes
  */
 function HeaderComponent(props) {
-    const [isNotifyMenuOpen, setIsNotifyMenuOpen] = useState(false);
-    const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+    const [isMailMenuOpen, setIsMailMenuOpen] = useState(false);
+    const [isAlertMenuOpen, setIsAlertMenuOpen] = useState(false);
+    const [isUserMenuOpen, seUserMenuOpen] = useState(false);
 
     function handleToggleMenu(event) {
         event.preventDefault();
@@ -26,16 +27,28 @@ function HeaderComponent(props) {
         }
     }
 
-    function handleToggleNotifyMenu(event) {
+    function handleToggleMailMenu(event) {
         event.preventDefault();
 
-        setIsNotifyMenuOpen(!isNotifyMenuOpen);
+        setIsMailMenuOpen(!isMailMenuOpen);
+        setIsAlertMenuOpen(false);
+        seUserMenuOpen(false);
     }
 
-    function handleToggleProfileMenu(event) {
+    function handleToggleAlertMenu(event) {
         event.preventDefault();
 
-        setIsProfileMenuOpen(!isProfileMenuOpen);
+        setIsMailMenuOpen(false);
+        setIsAlertMenuOpen(!isAlertMenuOpen);
+        seUserMenuOpen(false);
+    }
+
+    function handleToggleUserMenu(event) {
+        event.preventDefault();
+
+        setIsMailMenuOpen(false);
+        setIsAlertMenuOpen(false);
+        seUserMenuOpen(!isUserMenuOpen);
     }
 
     function handleLogout(event) {
@@ -43,21 +56,17 @@ function HeaderComponent(props) {
     }
 
     return (
-        <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <nav className="navbar p-0 fixed-top d-flex flex-row">
             <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <button className="navbar-brand brand-logo btn btn-link pl-2" title="contrair menu" onClick={handleToggleMenu}>
-                    <img src={Logo} width="60" height="60" alt="logo" className="w-auto ml-4 mr-3" />
-                    <span className="d-inline mb-0">SILK ROAD VAULT</span>
-                </button>
-                <button className="navbar-brand brand-logo-mini btn btn-link pl-2" title="expandir menu" onClick={handleToggleMenu}>
-                    <img src={Logo} width="60" height="60" alt="logo" className="w-auto ml-4 mr-3" />
-                    <span className="d-inline mb-0">SRV</span>
+                <button className="navbar-brand btn btn-link pl-2" title="contrair menu">
+                    <img src={Logo} width="60" height="60" alt="logo" className="w-auto ml-lg-4 mr-lg-3" />
+                    <span className="d-none d-lg-inline mb-0">SILK ROAD VAULT</span>
                 </button>
             </div>
             <div className="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-                <ul className="navbar-nav mr-lg-2">
+                <ul className="navbar-nav">
                     <li className="nav-item nav-search d-none d-lg-block">
-                        <div className="input-group">
+                        <div className="input-group rounded-lg shadow-sm">
                             <div className="input-group-prepend hover-cursor" id="navbar-search-icon">
                                 <span className="input-group-text" id="search">
                                     <i className="ti-search"></i>
@@ -68,70 +77,80 @@ function HeaderComponent(props) {
                     </li>
                 </ul>
                 <ul className="navbar-nav navbar-nav-right">
-                    <li id="main">
-                        <MainNavComponent />
+                    <li className="nav-item">
+                        <Link className="btn-link border-0 bg-transparent text-secondary text-center" to="/trader/new" title="CRIAR NOVA CARTA">
+                            <i className="ti-pencil-alt h3"></i>
+                            <span className="d-none d-lg-block">CRIAR</span>
+                        </Link>
                     </li>
-
-                    <li className={isNotifyMenuOpen ? "nav-item dropdown show" : "nav-item dropdown"}>
-                        <button className="nav-link count-indicator dropdown-toggle btn btn-link" data-toggle="dropdown" id="notifyDropdown" aria-expanded={isNotifyMenuOpen} onClick={handleToggleNotifyMenu}>
-                            <i className="ti-bell mx-0"></i>
-                            <span className="count"></span>
+                    <li className="nav-item">
+                        <Link className="btn-link border-0 bg-transparent text-secondary text-center" to="/trader/list" title="TRANSAÇÕES DE REALIZADAS">
+                            <i className="ti-package h3"></i>
+                            <span className="d-none d-lg-block">CARGAS</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="btn-link border-0 bg-transparent text-secondary text-center" to="/trader/partner" title="PARCEIROS DE NEGÓCIOS">
+                            <i className="ti-bookmark-alt h3"></i>
+                            <span className="d-none d-lg-block">PARCEIROS</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="btn-link border-0 bg-transparent text-secondary text-center" to="/trader/bank" title="BANCOS PARTICIPANTES">
+                            <i className="ti-wallet h3"></i>
+                            <span className="d-none d-lg-block">BANCOS</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item dropdown">
+                        <button className="btn-link border-0 bg-transparent text-secondary" onClick={handleToggleMailMenu}>
+                            <i className="ti-email h3 m-0 align-top"></i>
+                            <span className="d-none d-lg-block">AVISOS</span>
                         </button>
-                        <div className={isNotifyMenuOpen ? "dropdown-menu dropdown-menu-right navbar-dropdown show" : "dropdown-menu dropdown-menu-right navbar-dropdown"} aria-labelledby="notifyDropdown">
-                            <p className="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                            <button className="dropdown-item">
-                                <div className="item-thumbnail">
-                                    <div className="item-icon bg-success">
-                                        <i className="ti-info-alt mx-0"></i>
-                                    </div>
-                                </div>
-                                <div className="item-content">
-                                    <h6 className="font-weight-normal">Application Error</h6>
-                                    <p className="font-weight-light small-text mb-0 text-muted">
-                                        Just now
-                                    </p>
-                                </div>
-                            </button>
-                            <button className="dropdown-item">
-                                <div className="item-thumbnail">
-                                    <div className="item-icon bg-warning">
-                                        <i className="ti-settings mx-0"></i>
-                                    </div>
-                                </div>
-                                <div className="item-content">
-                                    <h6 className="font-weight-normal">Settings</h6>
-                                    <p className="font-weight-light small-text mb-0 text-muted">
-                                        Private message
-                                    </p>
-                                </div>
-                            </button>
-                            <button className="dropdown-item">
-                                <div className="item-thumbnail">
-                                    <div className="item-icon bg-info">
-                                        <i className="ti-user mx-0"></i>
-                                    </div>
-                                </div>
-                                <div className="item-content">
-                                    <h6 className="font-weight-normal">New user registration</h6>
-                                    <p className="font-weight-light small-text mb-0 text-muted">
-                                        2 days ago
-                                    </p>
-                                </div>
-                            </button>
+                        <div className={'dropdown-menu dropdown-menu-right position-absolute ' + (isMailMenuOpen ? 'show' : '')}>
                         </div>
                     </li>
-                    <li className={isProfileMenuOpen ? "nav-item nav-profile dropdown show" : "nav-item nav-profile dropdown"}>
-                        <button className="nav-link dropdown-toggle btn btn-link" data-toggle="dropdown" id="profileDropdown" aria-expanded={isProfileMenuOpen} onClick={handleToggleProfileMenu}>
-                            <img src={Avatar} alt="profile" />
+                    <li className="nav-item dropdown">
+                        <button className="btn-link border-0 bg-transparent text-secondary" onClick={handleToggleAlertMenu}>
+                            <i className="ti-bell h3 m-0 align-top"></i>
+                            <span className="d-none d-lg-block">ALERTAS</span>
                         </button>
-                        <div className={isProfileMenuOpen ? "dropdown-menu dropdown-menu-right navbar-dropdown show" : "dropdown-menu dropdown-menu-right navbar-dropdown"} aria-labelledby="profileDropdown">
-                            <Link className="dropdown-item" to="/settings">
-                                <i className="ti-settings text-primary"></i>
-                                Settings
-                            </Link>
+                        <div className={'dropdown-menu dropdown-menu-right position-absolute ' + (isAlertMenuOpen ? 'show' : '')}>
+                        </div>
+                    </li>
+                    <li className="nav-item dropdown">
+                        <button className="btn-link border-0 h3 bg-secondary rounded-circle p-2" onClick={handleToggleUserMenu}>
+                            <i className="ti-user text-white m-0 align-top"></i>
+                        </button>
+                        <div className={'dropdown-menu dropdown-menu-right position-absolute ' + (isUserMenuOpen ? 'show' : '')}>
+                            <a className="dropdown-item" href="#">
+                                Alterar Perfil
+                            </a>
+                            <a className="dropdown-item" href="#">
+                                Dados da Empresa
+                            </a>
+                            <a className="dropdown-item" href="#">
+                                Alterar Senha
+                            </a>
+                            <div className="dropdown-divider"></div>
+                            <span className="dropdown-item disabled">Gerenciar Certificados Digitais</span >
+                            <div className="pl-4">
+                                <a className="dropdown-item" href="#">
+                                    Carregar certificado da Empresa
+                                </a>
+                                <a className="dropdown-item" href="#">
+                                    Informar URL de chave de assinatura
+                                </a>
+                            </div>
+                            <div className="dropdown-divider"></div>
+                            <a className="dropdown-item" href="#">
+                                Consultar Extrato de Transações
+                            </a>
+                            <a className="dropdown-item" href="#">
+                                Consultar Cobranças de Transações
+                            </a>
+                            <div className="dropdown-divider"></div>
                             <Link className="dropdown-item" to="/" onClick={handleLogout}>
-                                <i className="ti-power-off text-primary"></i>
-                                Logout
+                                Encerrar Sessão
                             </Link>
                         </div>
                     </li>
