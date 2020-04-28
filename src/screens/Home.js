@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch } from "react-router-dom";
 import PrivateRoute from '../components/Common/PrivateRoute';
 import HeaderComponent from '../components/Common/Header';
-import MainNavComponent from '../components/Common/MainNav';
+import FooterComponent from '../components/Common/Footer';
 import NotFoundComponent from '../components/Common/NotFound';
 import ScreensAuditorHome from './Auditor/Home';
 import ScreensBankerHome from './Banker/Home';
@@ -32,6 +32,8 @@ function ScreensHome(props) {
                             </Switch>
                         </BrowserRouter>
                     </div>
+
+                    <FooterComponent />
                 </div>
             </div>
         </div>

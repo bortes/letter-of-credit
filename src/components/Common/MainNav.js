@@ -14,6 +14,7 @@ function MainNavComponent(props) {
                 <li className="nav-item">
                     <button className="btn btn-link btn-outline-light">
                         <i className="ti-angle-double-right text-dark"></i>
+                        <Link to="/">GO!</Link>
                     </button>
                 </li>
             </ul>

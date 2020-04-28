@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo.svg';
-import Avatar from '../../assets/images/default-avatar.svg';
-import MainNavComponent from './MainNav';
 import * as authService from '../../services/ServiceAuth';
 
 
 /**
- * Componente responsavel por exibir o cabecalho da pagina.
+ * Componente responsavel por exibir o cabecalho da aplicacao.
  *
  * @param props parametros do componente
  * @author bortes
@@ -16,16 +14,6 @@ function HeaderComponent(props) {
     const [isMailMenuOpen, setIsMailMenuOpen] = useState(false);
     const [isAlertMenuOpen, setIsAlertMenuOpen] = useState(false);
     const [isUserMenuOpen, seUserMenuOpen] = useState(false);
-
-    function handleToggleMenu(event) {
-        event.preventDefault();
-
-        if (document.body.classList.contains('sidebar-icon-only')) {
-            document.body.classList.remove('sidebar-icon-only');
-        } else {
-            document.body.classList.add('sidebar-icon-only');
-        }
-    }
 
     function handleToggleMailMenu(event) {
         event.preventDefault();
@@ -57,9 +45,9 @@ function HeaderComponent(props) {
 
     return (
         <nav className="navbar p-0 fixed-top d-flex flex-row">
-            <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+            <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center bg-white">
                 <button className="navbar-brand btn btn-link pl-2" title="contrair menu">
-                    <img src={Logo} width="60" height="60" alt="logo" className="w-auto ml-lg-4 mr-lg-3" />
+                    <img src={Logo} alt="logo" className="w-auto ml-lg-4 mr-lg-3 img-sm" />
                     <span className="d-none d-lg-inline mb-0">SILK ROAD VAULT</span>
                 </button>
             </div>
@@ -77,79 +65,87 @@ function HeaderComponent(props) {
                     </li>
                 </ul>
                 <ul className="navbar-nav navbar-nav-right">
-                    <li className="nav-item">
-                        <Link className="btn-link border-0 bg-transparent text-secondary text-center" to="/trader/new" title="CRIAR NOVA CARTA">
-                            <i className="ti-pencil-alt h3"></i>
-                            <span className="d-none d-lg-block">CRIAR</span>
+                    <li className="nav-item m-1">
+                        <Link className="btn btn-light btn-lg p-3 d-none d-md-block" to="/trader/new" title="CRIAR NOVA CARTA">
+                            <i className="ti-pencil-alt"></i>
+                            <span className="sr-only d-none">CRIAR</span>
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="btn-link border-0 bg-transparent text-secondary text-center" to="/trader/list" title="TRANSAÇÕES DE REALIZADAS">
-                            <i className="ti-package h3"></i>
-                            <span className="d-none d-lg-block">CARGAS</span>
+                    <li className="nav-item m-1">
+                        <Link className="btn btn-light btn-lg p-3 d-none d-md-block" to="/trader/list" title="TRANSAÇÕES DE REALIZADAS">
+                            <i className="ti-package"></i>
+                            <span className="sr-only d-none">CARGAS</span>
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="btn-link border-0 bg-transparent text-secondary text-center" to="/trader/partner" title="PARCEIROS DE NEGÓCIOS">
-                            <i className="ti-bookmark-alt h3"></i>
-                            <span className="d-none d-lg-block">PARCEIROS</span>
+                    <li className="nav-item m-1">
+                        <Link className="btn btn-light btn-lg p-3 d-none d-md-block" to="/trader/partner" title="PARCEIROS DE NEGÓCIOS">
+                            <i className="ti-bookmark-alt"></i>
+                            <span className="sr-only d-none">PARCEIROS</span>
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="btn-link border-0 bg-transparent text-secondary text-center" to="/trader/bank" title="BANCOS PARTICIPANTES">
-                            <i className="ti-wallet h3"></i>
-                            <span className="d-none d-lg-block">BANCOS</span>
+                    <li className="nav-item m-1">
+                        <Link className="btn btn-light btn-lg p-3 d-none d-md-block" to="/trader/bank" title="BANCOS PARTICIPANTES">
+                            <i className="ti-wallet"></i>
+                            <span className="sr-only d-none">BANCOS</span>
                         </Link>
                     </li>
-                    <li className="nav-item dropdown">
-                        <button className="btn-link border-0 bg-transparent text-secondary" onClick={handleToggleMailMenu}>
-                            <i className="ti-email h3 m-0 align-top"></i>
-                            <span className="d-none d-lg-block">AVISOS</span>
+                    <li className="nav-item dropdown m-1">
+                        <button className="btn btn-light btn-lg p-3" onClick={handleToggleMailMenu}>
+                            <i className="ti-email m-0"></i>
+                            <span className="sr-only d-none">AVISOS</span>
                         </button>
                         <div className={'dropdown-menu dropdown-menu-right position-absolute ' + (isMailMenuOpen ? 'show' : '')}>
                         </div>
                     </li>
-                    <li className="nav-item dropdown">
-                        <button className="btn-link border-0 bg-transparent text-secondary" onClick={handleToggleAlertMenu}>
-                            <i className="ti-bell h3 m-0 align-top"></i>
-                            <span className="d-none d-lg-block">ALERTAS</span>
+                    <li className="nav-item dropdown m-1">
+                        <button className="btn btn-light btn-lg p-3" onClick={handleToggleAlertMenu}>
+                            <i className="ti-bell m-0"></i>
+                            <span className="sr-only d-none">ALERTAS</span>
                         </button>
                         <div className={'dropdown-menu dropdown-menu-right position-absolute ' + (isAlertMenuOpen ? 'show' : '')}>
                         </div>
                     </li>
-                    <li className="nav-item dropdown">
-                        <button className="btn-link border-0 h3 bg-secondary rounded-circle p-2" onClick={handleToggleUserMenu}>
+                    <li className="nav-item dropdown m-1">
+                        <button className="btn-link border-0 h3 display-5 bg-secondary rounded-circle p-2 mt-2" onClick={handleToggleUserMenu}>
                             <i className="ti-user text-white m-0 align-top"></i>
                         </button>
                         <div className={'dropdown-menu dropdown-menu-right position-absolute ' + (isUserMenuOpen ? 'show' : '')}>
-                            <a className="dropdown-item" href="#">
+                            <Link className="dropdown-item" to="/">
+                                <i className="ti-eraser"></i>
                                 Alterar Perfil
-                            </a>
-                            <a className="dropdown-item" href="#">
+                            </Link>
+                            <Link className="dropdown-item" to="/">
+                                <i className="ti-info-alt"></i>
                                 Dados da Empresa
-                            </a>
-                            <a className="dropdown-item" href="#">
+                            </Link>
+                            <Link className="dropdown-item" to="/">
+                                <i className="ti-more"></i>
                                 Alterar Senha
-                            </a>
+                            </Link>
                             <div className="dropdown-divider"></div>
                             <span className="dropdown-item disabled">Gerenciar Certificados Digitais</span >
                             <div className="pl-4">
-                                <a className="dropdown-item" href="#">
+                                <Link className="dropdown-item" to="/">
+                                    <i className="ti-import"></i>
                                     Carregar certificado da Empresa
-                                </a>
-                                <a className="dropdown-item" href="#">
+                                </Link>
+                                <Link className="dropdown-item" to="/">
+                                    <i className="ti-medall-alt"></i>
                                     Informar URL de chave de assinatura
-                                </a>
+                                </Link>
                             </div>
                             <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="#">
+                            <Link className="dropdown-item" to="/">
+                                <i className="ti-ticket"></i>
                                 Consultar Extrato de Transações
-                            </a>
-                            <a className="dropdown-item" href="#">
+                            </Link>
+                            <Link className="dropdown-item" to="/">
+                                <i className="ti-pie-chart"></i>
                                 Consultar Cobranças de Transações
-                            </a>
+                            </Link>
                             <div className="dropdown-divider"></div>
                             <Link className="dropdown-item" to="/" onClick={handleLogout}>
+                                <i className="ti-power-off"></i>
                                 Encerrar Sessão
                             </Link>
                         </div>
