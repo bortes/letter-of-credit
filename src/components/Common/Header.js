@@ -14,7 +14,7 @@ function HeaderComponent(props) {
     const [isMailMenuOpen, setIsMailMenuOpen] = useState(false);
     const [isAlertMenuOpen, setIsAlertMenuOpen] = useState(false);
     const [isUserMenuOpen, seUserMenuOpen] = useState(false);
-
+    
     function handleToggleMailMenu(event) {
         event.preventDefault();
 
@@ -60,19 +60,19 @@ function HeaderComponent(props) {
                                     <i className="ti-search"></i>
                                 </span>
                             </div>
-                            <input type="text" className="form-control" id="navbar-search-input" placeholder="Search" aria-label="search" aria-describedby="search" />
+                            <input type="text" className="form-control" id="navbar-search-input" placeholder="Pesquisar por ajuda" aria-label="search" aria-describedby="search" />
                         </div>
                     </li>
                 </ul>
                 <ul className="navbar-nav navbar-nav-right">
                     <li className="nav-item m-1">
-                        <Link className="btn btn-light btn-lg p-3 d-none d-md-block" to="/trader/new" title="CRIAR NOVA CARTA">
+                        <Link className="btn btn-light btn-lg p-3 d-none d-md-block" to="/trader/trade/new" title="CRIAR NOVA CARTA">
                             <i className="ti-pencil-alt"></i>
                             <span className="sr-only d-none">CRIAR</span>
                         </Link>
                     </li>
                     <li className="nav-item m-1">
-                        <Link className="btn btn-light btn-lg p-3 d-none d-md-block" to="/trader/list" title="TRANSAÇÕES DE REALIZADAS">
+                        <Link className="btn btn-light btn-lg p-3 d-none d-md-block" to="/trader/trade/list" title="TRANSAÇÕES DE REALIZADAS">
                             <i className="ti-package"></i>
                             <span className="sr-only d-none">CARGAS</span>
                         </Link>

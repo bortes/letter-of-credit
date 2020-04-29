@@ -7,7 +7,7 @@ import * as authService from '../../services/ServiceAuth';
  *
  * @author bortes
  */
-function PrivateRoute({ component: Component, ...rest }) {
+function PrivateRouteComponent({ component: Component, ...rest }) {
     return (
         <Route
             {...rest}
@@ -22,4 +22,4 @@ function PrivateRoute({ component: Component, ...rest }) {
     );
 }
 
-export default PrivateRoute;
+export default PrivateRouteComponent;

@@ -1,4 +1,4 @@
-const TOKEN_KEY = 'l/c-token';
+const TOKEN_KEY = 'lct';
 
 const LOGIN_RESPONSE_200 = {
     apiVersion: '0.0',
@@ -21,7 +21,7 @@ const LOGIN_RESPONSE = {
 
 export function login(username, password) {
     return new Promise(function (resolve, reject) {
-        if (username === 'poc' && password === 'poc') {
+        if (/^poc$/i.test(username) && /^poc$/i.test(password)) {
             localStorage.setItem(TOKEN_KEY, JSON.stringify(LOGIN_RESPONSE_200.data));
 
             resolve(LOGIN_RESPONSE_200);

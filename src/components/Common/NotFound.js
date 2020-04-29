@@ -8,13 +8,25 @@ import React from "react";
  */
 function NotFoundComponent(props) {
     return (
-        <div className="row">
-            <div className="col-md-12 grid-margin">
-                <div className="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h2 className="font-weight-bold mb-0">Pagina nao encontrada</h2>
+        <div className="d-flex flex-row align-items-center justify-content-center">
+            <div className="text-center m-3">
+                <h2 className="h1 text-black-50">404</h2>
+
+                <h3 className="text-secondary display-4 font-weight-bold mt-4">Página não encontrada.</h3>
+
+                <p className="text-secondary">A página procurada não foi encontrada.{new Date().getTime()}</p>
+
+                <form className="pb-0 mt-4 d-none">
+                    <div className="input-group rounded-lg shadow-sm">
+                        <div className="input-group-prepend hover-cursor">
+                            <span className="input-group-text bg-white text-black-50">
+                                <i className="ti-search"></i>
+                            </span>
+                        </div>
+                        <input type="text" className="form-control border-left-0 pl-0" placeholder="Pesquisar por ajuda" aria-label="helpér" aria-describedby="helpér" />
                     </div>
-                </div>
+                </form>
+
             </div>
         </div>
     );

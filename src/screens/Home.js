@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import PrivateRoute from '../components/Common/PrivateRoute';
 import HeaderComponent from '../components/Common/Header';
 import FooterComponent from '../components/Common/Footer';
@@ -23,14 +23,12 @@ function ScreensHome(props) {
 
                 <div className="main-panel w-100">
                     <div className="content-wrapper">
-                        <BrowserRouter>
-                            <Switch>
-                                <PrivateRoute path="/auditor" component={ScreensAuditorHome} />
-                                <PrivateRoute path="/banker" component={ScreensBankerHome} />
-                                <PrivateRoute path="/trader" component={ScreensTraderHome} />
-                                <PrivateRoute path="*" component={NotFoundComponent} />
-                            </Switch>
-                        </BrowserRouter>
+                        <Switch>
+                            <PrivateRoute path="/auditor" component={ScreensAuditorHome} />
+                            <PrivateRoute path="/banker" component={ScreensBankerHome} />
+                            <PrivateRoute path="/trader" component={ScreensTraderHome} />
+                            <PrivateRoute path="*" component={NotFoundComponent} />
+                        </Switch>
                     </div>
 
                     <FooterComponent />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import PrivateRoute from '../components/Common/PrivateRoute';
+import PrivateRouteComponent from '../components/Common/PrivateRoute';
 import ScreensAuthLogin from '../screens/Auth/Login';
 import ScreensHome from "../screens/Home";
 
@@ -15,7 +15,7 @@ function App(props) {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/login" component={ScreensAuthLogin} />
-                <PrivateRoute path="*" component={ScreensHome} />
+                <PrivateRouteComponent path="*" component={ScreensHome} />
             </Switch>
         </BrowserRouter>
     );
