@@ -46,10 +46,10 @@ function HeaderComponent(props) {
     return (
         <nav className="navbar p-0 fixed-top d-flex flex-row">
             <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center bg-white">
-                <button className="navbar-brand btn btn-link pl-2" title="contrair menu">
+                <Link className="navbar-brand btn btn-link pl-2" title="contrair menu" to="/trader">
                     <img src={Logo} alt="logo" className="w-auto ml-lg-4 mr-lg-3 img-sm" />
                     <span className="d-none d-lg-inline mb-0">SILK ROAD VAULT</span>
-                </button>
+                </Link>
             </div>
             <div className="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <ul className="navbar-nav">

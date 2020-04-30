@@ -1,6 +1,6 @@
 import React from 'react';
-import PageComponent from '../../components/Common/Page';
-//import chinaIcon from '../../assets/images/China.png';
+import PrivateBC from '../../../assets/images/money.svg';
+import PublicBC from '../../../assets/images/money.svg';
 
 /**
  * Componente responsavel por exibir a pagina consulta das negociacoes registradas.
@@ -9,197 +9,279 @@ import PageComponent from '../../components/Common/Page';
  * @author Bortes && @author SkyKnight
  * 
  */
-function ScreensTraderList(props) {
+function ScreensTraderTradeList(props) {
     return (
-        <PageComponent>
-         <div>
-        <h4 className="card-title">Gerenciamento de Cargas</h4>
-        <div className="table-responsive">
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th>
-                  Importador
-                </th>
-                <th>
-                  Exportador
-                </th>
-                <th>
-                  Status
-                </th>
-                <th>
-                  Origem
-                </th>
-                <th>
-                  Destino
-                </th>
-                <th>
-                  Navio
-                </th>
-                <th>
-                  Banco
-                </th>
-                <th>
-                  L/C(%)
-                </th>
-                <th>
-                  Carga(MM)
-                </th>
-                <th>
-                  Produto
-                </th>
-                <th>
-                  Deadline
-                </th>
-                <th>
-                  Publicação
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="py-1">
-                  Emp.F
-                </td>
-                <td>
-                  Emp.A
-                </td>
-                <td>
-                  <div className="progress">
-                    <div className="progress-bar bg-success" role="progressbar" style={{width: '25%'}} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100} />
-                  </div>
-                </td>
-                <td>
-                <img src="../../assets/images/China.png" alt="image" />
-                </td>
-                <td>
-                  Irã ( ICONE )
-                </td>
-               
-              </tr>
-              <tr>
-                <td className="py-1">
-                    Emp.C
-                </td>
-                <td>
-                  Emp.B
-                </td>
-                <td>
-                  <div className="progress">
-                    <div className="progress-bar bg-danger" role="progressbar" style={{width: '75%'}} aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} />
-                  </div>
-                </td>
-                <td>
-                  Brsil (ICONE )
-                </td>
-                <td>
-                  China ( ICONE )
-                </td>
-              </tr>
-              <tr>
-                <td className="py-1">
-                  Emp.A
-                </td>
-                <td>
-                  Emp.C
-                </td>
-                <td>
-                  <div className="progress">
-                    <div className="progress-bar bg-warning" role="progressbar" style={{width: '90%'}} aria-valuenow={90} aria-valuemin={0} aria-valuemax={100} />
-                  </div>
-                </td>
-                <td>
-                  China ( ICONE )
-                </td>
-                <td>
-                  Espanha ( ICONE )
-                </td>
-              </tr>
-              <tr>
-                <td className="py-1">
-                  Emp.D
-                </td>
-                <td>
-                  Emp.A
-                </td>
-                <td>
-                  <div className="progress">
-                    <div className="progress-bar bg-primary" role="progressbar" style={{width: '50%'}} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100} />
-                  </div>
-                </td>
-                <td>
-                  Brasil ( ICONE )
-                </td>
-                <td>
-                  China ( ICONE )
-                </td>
-              </tr>
-              <tr>
-                <td className="py-1">
-                 Emp.H
-                </td>
-                <td>
-                 Emp.B
-                </td>
-                <td>
-                  <div className="progress">
-                    <div className="progress-bar bg-danger" role="progressbar" style={{width: '35%'}} aria-valuenow={35} aria-valuemin={0} aria-valuemax={100} />
-                  </div>
-                </td>
-                <td>
-                  Brasil ( ICONE)
-                </td>
-                <td>
-                  Emirados Arabes ( ICONE )
-                </td>
-              </tr>
-              <tr>
-                <td className="py-1">
-                  Emp.J
-                </td>
-                <td>
-                 Emp.F
-                </td>
-                <td>
-                  <div className="progress">
-                    <div className="progress-bar bg-info" role="progressbar" style={{width: '65%'}} aria-valuenow={65} aria-valuemin={0} aria-valuemax={100} />
-                  </div>
-                </td>
-                <td>
-                 Golfo Pérsico ( ICONE)
-                </td>
-                <td>
-                  Brasil ( ICONE)
-                </td>
-              </tr>
-              <tr>
-                <td className="py-1">
-                  Emp.Z
-                </td>
-                <td>
-                  Emp.D
-                </td>
-                <td>
-                  <div className="progress">
-                    <div className="progress-bar bg-warning" role="progressbar" style={{width: '20%'}} aria-valuenow={20} aria-valuemin={0} aria-valuemax={100} />
-                  </div>
-                </td>
-                <td>
-                  EUA (ICONE)
-                </td>
-                <td>
-                  China ( ICONE)
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+        <>
+            <div className="row">
+                <div className="col-md-12 grid-margin">
+                    <div className="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2 className="font-weight-bold mb-0">Gerenciamento de cargas</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        </PageComponent>
+            <div className="row">
+                <div className="col-md-12 grid-margin text-md-center">
+                    <button className="btn btn-dark btn-lg p-3 ml-1 mr-1 shadow-sm">
+                        <i className="ti-shift-right"></i>
+                        <span className="pl-2">A CAMINHO</span>
+                    </button>
+
+                    <button className="btn btn-dark btn-lg p-3 ml-1 mr-1 shadow-sm">
+                        <i className="ti-files"></i>
+                        <span className="pl-2">DOCUMENTOS</span>
+                    </button>
+
+                    <button className="btn btn-dark btn-lg p-3 ml-1 mr-1 shadow-sm">
+                        <i className="ti-reload"></i>
+                        <span className="pl-2">CARREGANDO</span>
+                    </button>
+
+                    <button className="btn btn-dark btn-lg p-3 ml-1 mr-1 shadow-sm">
+                        <i className="ti-na"></i>
+                        <span className="pl-2">AGUARDANDO</span>
+                    </button>
+
+                    <button className="btn btn-dark btn-lg p-3 ml-1 mr-1 shadow-sm">
+                        <i className="ti-check-box"></i>
+                        <span className="pl-2">FINALIZADO</span>
+                    </button>
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-lg-12 grid-margin stretch-card">
+
+                    <div className="card">
+                        <div className="card-body">
+                            <p className="card-description">Lista de cargas associadas às cartas de créditos emitidas pela aplicação.</p>
+                            <div className="table-responsive">
+                                <table className="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Importador</th>
+                                            <th>Exportador</th>
+                                            <th width="70">Status</th>
+                                            <th width="70">Origem</th>
+                                            <th width="70">Destino</th>
+                                            <th>Navio</th>
+                                            <th>Banco</th>
+                                            <th width="86">L/C (%)</th>
+                                            <th width="86">Carga (MM)</th>
+                                            <th width="86">Produto</th>
+                                            <th width="86">Deadline</th>
+                                            <th width="86">Publicação</th>
+                                            {/* <th width="150"> </th> */}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Amaggi</td>
+                                            <td>Amaggi</td>
+                                            <td><i className="ti-shift-right display-5 bg-secondary text-white font-weight-bold rounded-circle p-3"></i></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/br/60.png" alt="BR" className="img-lg" /></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/cn/60.png" alt="CN" className="img-lg" /></td>
+                                            <td>Navio I</td>
+                                            <td>Banco I</td>
+                                            <td>1,00</td>
+                                            <td>$ 77,99</td>
+                                            <td>Soja (B)</td>
+                                            <td><span className="text-secondary">15/05/2020</span></td>
+                                            <td><img src={PrivateBC} className="img-lg" /></td>
+                                            {/* <td>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-comment-alt"></i>
+                                                    <span className="sr-only d-none">COMENTAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-pencil-alt"></i>
+                                                    <span className="sr-only d-none">EDITAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-close"></i>
+                                                    <span className="sr-only d-none">EXCLUIR</span>
+                                                </a>
+                                            </td> */}
+                                        </tr>
+                                        <tr>
+                                            <td>Louis Dreyfus Company</td>
+                                            <td>Louis Dreyfus Company</td>
+                                            <td><i className="ti-files display-5 bg-secondary text-white font-weight-bold rounded-circle p-3"></i></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/br/60.png" alt="BR" className="img-lg" /></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/cn/60.png" alt="CN" className="img-lg" /></td>
+                                            <td>Navio I</td>
+                                            <td>Banco I</td>
+                                            <td>1,00</td>
+                                            <td>$ 77,99</td>
+                                            <td>Soja (B)</td>
+                                            <td><span className="text-secondary">15/05/2020</span></td>
+                                            <td><img src={PrivateBC} className="img-lg" /></td>
+                                            {/* <td>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-comment-alt"></i>
+                                                    <span className="sr-only d-none">COMENTAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-pencil-alt"></i>
+                                                    <span className="sr-only d-none">EDITAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-close"></i>
+                                                    <span className="sr-only d-none">EXCLUIR</span>
+                                                </a>
+                                            </td> */}
+                                        </tr>
+                                        <tr>
+                                            <td>Archer Daniels Midland</td>
+                                            <td>Archer Daniels Midland</td>
+                                            <td><i className="ti-reload display-5 bg-secondary text-white font-weight-bold rounded-circle p-3"></i></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/br/60.png" alt="BR" className="img-lg" /></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/cn/60.png" alt="CN" className="img-lg" /></td>
+                                            <td>Navio I</td>
+                                            <td>Banco I</td>
+                                            <td>1,00</td>
+                                            <td>$ 77,99</td>
+                                            <td>Soja (B)</td>
+                                            <td><span className="text-secondary">15/05/2020</span></td>
+                                            <td><img src={PrivateBC} className="img-lg" /></td>
+                                            {/* <td>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-comment-alt"></i>
+                                                    <span className="sr-only d-none">COMENTAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-pencil-alt"></i>
+                                                    <span className="sr-only d-none">EDITAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-close"></i>
+                                                    <span className="sr-only d-none">EXCLUIR</span>
+                                                </a>
+                                            </td> */}
+                                        </tr>
+                                        <tr>
+                                            <td>Cargill</td>
+                                            <td>Cargill</td>
+                                            <td><i className="ti-na display-5 bg-secondary text-white font-weight-bold rounded-circle p-3"></i></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/us/60.png" alt="US" className="img-lg" /></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/br/60.png" alt="BR" className="img-lg" /></td>
+                                            <td>Navio I</td>
+                                            <td>Banco I</td>
+                                            <td>1,00</td>
+                                            <td>$ 77,99</td>
+                                            <td>Soja (B)</td>
+                                            <td><span className="text-secondary">15/05/2020</span></td>
+                                            <td><img src={PrivateBC} className="img-lg" /></td>
+                                            {/* <td>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-comment-alt"></i>
+                                                    <span className="sr-only d-none">COMENTAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-pencil-alt"></i>
+                                                    <span className="sr-only d-none">EDITAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-close"></i>
+                                                    <span className="sr-only d-none">EXCLUIR</span>
+                                                </a>
+                                            </td> */}
+                                        </tr>
+                                        <tr>
+                                            <td>Bayer</td>
+                                            <td>Bayer</td>
+                                            <td><i className="ti-files display-5 bg-secondary text-white font-weight-bold rounded-circle p-3"></i></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/cn/60.png" alt="CN" className="img-lg" /></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/br/60.png" alt="BR" className="img-lg" /></td>
+                                            <td>Navio I</td>
+                                            <td>Banco I</td>
+                                            <td>1,00</td>
+                                            <td>$ 77,99</td>
+                                            <td>Soja (B)</td>
+                                            <td><span className="text-secondary">15/05/2020</span></td>
+                                            <td></td>
+                                            {/* <td>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-comment-alt"></i>
+                                                    <span className="sr-only d-none">COMENTAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-pencil-alt"></i>
+                                                    <span className="sr-only d-none">EDITAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-close"></i>
+                                                    <span className="sr-only d-none">EXCLUIR</span>
+                                                </a>
+                                            </td> */}
+                                        </tr>
+                                        <tr>
+                                            <td>Bunge Limited</td>
+                                            <td>Bunge Limited</td>
+                                            <td><i className="ti-reload display-5 bg-secondary text-white font-weight-bold rounded-circle p-3"></i></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/br/60.png" alt="BR" className="img-lg" /></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/nl/60.png" alt="NL" className="img-lg" /></td>
+                                            <td>Navio I</td>
+                                            <td>Banco I</td>
+                                            <td>1,00</td>
+                                            <td>$ 77,99</td>
+                                            <td>Soja (B)</td>
+                                            <td><span className="text-secondary">15/05/2020</span></td>
+                                            <td><img src={PrivateBC} className="img-lg" /></td>
+                                            {/* <td>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-comment-alt"></i>
+                                                    <span className="sr-only d-none">COMENTAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-pencil-alt"></i>
+                                                    <span className="sr-only d-none">EDITAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-close"></i>
+                                                    <span className="sr-only d-none">EXCLUIR</span>
+                                                </a>
+                                            </td> */}
+                                        </tr>
+                                        <tr>
+                                            <td>Eldorado Brasil</td>
+                                            <td>Eldorado Brasil</td>
+                                            <td><i className="ti-check-box display-5 bg-secondary text-white font-weight-bold rounded-circle p-3"></i></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/sa/60.png" alt="SA" className="img-lg" /></td>
+                                            <td><img src="https://www.apple.com/ac/flags/1/images/br/60.png" alt="BR" className="img-lg" /></td>
+                                            <td>Navio I</td>
+                                            <td>Banco I</td>
+                                            <td>1,00</td>
+                                            <td>$ 77,99</td>
+                                            <td>Soja (B)</td>
+                                            <td><span className="text-secondary">15/05/2020</span></td>
+                                            <td><img src={PublicBC} className="img-lg" /></td>
+                                            {/* <td>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-comment-alt"></i>
+                                                    <span className="sr-only d-none">COMENTAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-pencil-alt"></i>
+                                                    <span className="sr-only d-none">EDITAR</span>
+                                                </a>
+                                                <a className="btn btn-light btn-lg p-3 ml-1 mr-1">
+                                                    <i className="ti-close"></i>
+                                                    <span className="sr-only d-none">EXCLUIR</span>
+                                                </a>
+                                            </td> */}
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
 
-export default ScreensTraderList;
-
-
+export default ScreensTraderTradeList;

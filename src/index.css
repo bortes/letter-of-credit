@@ -1,3 +1,8 @@
+html {
+    overflow-y: scroll;
+    
+}
+
 .auth-img-bg {
     background: #272727 url('./assets/images/login-bg.jpg') no-repeat center center;
 }

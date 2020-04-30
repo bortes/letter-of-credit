@@ -20,6 +20,7 @@ function ScreensTraderHome(props) {
             <PrivateRouteComponent path="/trader/commodity" component={ScreensTraderCommodityHome} />
             <PrivateRouteComponent path="/trader/partner" component={ScreensTraderPartnerHome} />
             <PrivateRouteComponent path="/trader/trade" component={ScreensTraderTradeHome} />
+            <PrivateRouteComponent path="/trader" component={ScreensTraderTradeHome} />
             <PrivateRouteComponent path="*" component={NotFoundComponent} />
         </Switch>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import PageComponent from '../components/Common/Page';
 import {
     ComposedChart, Legend,
     AreaChart, Area,
@@ -113,7 +112,7 @@ function ScreensTraderDashboard(props) {
         },
     ];
     return (
-        <PageComponent>
+        <>
             <div className="row">
                 <div className="col-md-12 grid-margin">
                     <div className="d-flex justify-content-between align-items-center">
@@ -351,7 +350,7 @@ function ScreensTraderDashboard(props) {
                     </div>
                 </div>
             </div>
-        </PageComponent>
+        </>
     );
 }
 

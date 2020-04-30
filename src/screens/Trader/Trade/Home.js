@@ -1,4 +1,9 @@
 import React from 'react';
+import { Switch } from "react-router-dom";
+import PrivateRouteComponent from '../../../components/Common/PrivateRoute';
+import ScreensTraderTradeForm from './Form';
+import ScreensTraderTradeList from './List';
+import ScreensTraderDashboard from '../Dashboard';
 
 /**
  * Componente responsavel por controlar as negociacoes.
@@ -8,16 +13,11 @@ import React from 'react';
  */
 function ScreensTraderTradeHome(props) {
     return (
-        <div className="row">
-            <div className="col-md-12 grid-margin">
-                <div className="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h2 className="font-weight-bold mb-0">NEGOCIANTE</h2>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Switch>
+            <PrivateRouteComponent path="/trader/trade/new" component={ScreensTraderTradeForm} />
+            <PrivateRouteComponent path="/trader/trade/list" component={ScreensTraderTradeList} />
+            <PrivateRouteComponent path="*" component={ScreensTraderDashboard} />
+        </Switch>
     );
 }
 
