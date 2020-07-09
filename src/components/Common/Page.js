@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderComponent from './Header';
-import * as authService from '../../services/ServiceAuth';
+import AuthService from '../../services/ServiceAuth';
 
 /**
  * Componente responsavel por exibir a estrutura padrao da pagina.
@@ -9,7 +9,7 @@ import * as authService from '../../services/ServiceAuth';
  * @author bortes
  */
 function PageComponent(props) {
-    if (authService.isAuthenticated()) {
+    if (AuthService.isAuthenticated()) {
         return (
             <div className="container-scroller">
                 <HeaderComponent />

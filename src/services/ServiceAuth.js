@@ -6,7 +6,7 @@ const LOGIN_RESPONSE_200 = {
     data: {
         access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwibmFtZSI6IkwvQyIsImlhdCI6MTUxNjIzOTAyMn0.QHdv85k4XEvm1jvQT8bRf7yttFbgYzN56Mp2GQuncfI',
         created_at: new Date().getTime(),
-        expires_in: 1800,
+        expires_in: 1800000,
         refresh_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwibmFtZSI6IkwvQyIsImlhdCI6MTUxNjIzOTAyMn0.P3VhCAwLVHhIY0k7Si2NsMKIaovHHPGXWde7gV0on8Q',
         token_type: 'Bearer',
         account_id: 1
@@ -52,3 +52,11 @@ export function isAuthenticated() {
 
     return (data.created_at + (data.expires_in * 1000)) > new Date().getTime();
 }
+
+const ServiceAuth = {
+    login,
+    logout,
+    isAuthenticated
+}
+
+export default ServiceAuth;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import Logo from '../../assets/images/logo.svg';
-import * as authService from '../../services/ServiceAuth';
+import AuthService from '../../services/ServiceAuth';
 
 /**
  * Componente responsavel por exibir a pagina para autenticao.
@@ -18,7 +18,7 @@ function ScreensAuthLogin(props) {
     function handleSubmit(event) {
         event.preventDefault();
 
-        authService
+        AuthService
             .login(username, password)
             .then(result => {
                 setHasError(false);

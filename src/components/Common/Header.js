@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo.svg';
-import * as authService from '../../services/ServiceAuth';
+import AuthService from '../../services/ServiceAuth';
 
 
 /**
@@ -40,7 +40,7 @@ function HeaderComponent(props) {
     }
 
     function handleLogout(event) {
-        authService.logout();
+        AuthService.logout();
     }
 
     return (

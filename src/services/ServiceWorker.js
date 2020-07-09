@@ -139,3 +139,10 @@ export function unregister() {
       });
   }
 }
+
+const ServiceWorker = {
+    register,
+    unregister
+}
+
+export default ServiceWorker;
