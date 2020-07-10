@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ServiceCompany from '../../../services/ServiceBank';
+import ServiceCompany from '../../../services/ServiceCompany';
 import CompanyForm from '../Form/Form';
 
 /**

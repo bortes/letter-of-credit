@@ -3,6 +3,13 @@ html {
     
 }
 
+.data-disabled {
+    -webkit-filter: grayscale(1);
+    filter: gray;
+    filter: grayscale(1);
+    opacity: .5;
+}
+
 .auth-img-bg {
     background: #272727 url('./assets/images/login-bg.jpg') no-repeat center center;
 }
