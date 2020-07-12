@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import PrivateRouteComponent from '../components/Common/PrivateRoute';
-import ScreensAuthLogin from '../screens/Auth/Login';
-import ScreensHome from "../screens/Home";
+import {
+    CssBaseline,
+} from '@material-ui/core';
+
+import Home from './Home';
 
 /**
  * Componente responsavel por exibir a aplicacao.
@@ -12,12 +13,10 @@ import ScreensHome from "../screens/Home";
  */
 function App(props) {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/login" component={ScreensAuthLogin} />
-                <PrivateRouteComponent path="*" component={ScreensHome} />
-            </Switch>
-        </BrowserRouter>
+        <React.Fragment>
+            <CssBaseline />
+            <Home />
+        </React.Fragment>
     );
 }
 

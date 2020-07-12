@@ -10,7 +10,7 @@ function BankForm(props) {
     const data = props.data;
 
     return (
-        <div className="col-4 mb-4">
+        <div className="col-lg-4 mb-4">
             <div className="card">
                 <div className="card-body">
                     <p className="card-title text-md-center text-xl-left h-15">{data.name}</p>

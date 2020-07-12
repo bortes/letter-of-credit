@@ -1,12 +1,27 @@
 import React from 'react';
-import { Switch } from "react-router-dom";
-import PrivateRoute from '../components/Common/PrivateRoute';
-import HeaderComponent from '../components/Common/Header';
-import FooterComponent from '../components/Common/Footer';
-import NotFoundComponent from '../components/Common/NotFound';
-import ScreensAuditorHome from './Auditor/Home';
-import ScreensBankerHome from './Banker/Home';
-import ScreensTraderHome from './Trader/Home';
+import {
+    makeStyles,
+    Paper,
+    Grid,
+    Typography,
+    Card,
+    CardActions,
+    CardContent,
+    Button,
+} from '@material-ui/core';
+
+import { Page } from '../components/Layout';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.disabled,
+    },
+}));
 
 /**
  * Componente responsavel por exibir a pagina principal da aplicacao.
@@ -14,28 +29,63 @@ import ScreensTraderHome from './Trader/Home';
  * @param props parametros do componente
  * @author bortes
  */
-function ScreensHome(props) {
+function Home(props) {
+    const classes = useStyles();
+
     return (
-        <div className="container-scroller">
-            <HeaderComponent />
+        <Page title="DASHBOARD">
+            <Grid container spacing={3}>
 
-            <div className="container-fluid page-body-wrapper">
+                <Grid item xs={12} md={2}>
+                    <Paper>xs=12</Paper>
+                </Grid>
 
-                <div className="main-panel w-100">
-                    <div className="content-wrapper">
-                        <Switch>
-                            <PrivateRoute path="/auditor" component={ScreensAuditorHome} />
-                            <PrivateRoute path="/banker" component={ScreensBankerHome} />
-                            <PrivateRoute path="/trader" component={ScreensTraderHome} />
-                            <PrivateRoute path="*" component={NotFoundComponent} />
-                        </Switch>
-                    </div>
+                <Grid item xs={12} md={2}>
+                    <Paper>xs=12</Paper>
+                </Grid>
 
-                    <FooterComponent />
-                </div>
-            </div>
-        </div>
+                <Grid item xs={12} md={2}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+
+                <Grid item xs={12} md={2}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+
+                <Grid item xs={12} md={2}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+
+                <Grid item xs={12} md={2}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+
+                <Grid item xs={12} md={3}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+
+                <Grid item xs={12} md={3}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+
+                <Grid item xs={12} md={3}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+
+                <Grid item xs={12} md={3}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+
+                <Grid item xs={12} md={6}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+
+                <Grid item xs={12} md={6}>
+                    <Paper>xs=12</Paper>
+                </Grid>
+            </Grid>
+        </Page>
     );
 }
 
-export default ScreensHome;
+export default Home;

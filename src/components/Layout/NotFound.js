@@ -6,7 +6,7 @@ import React from "react";
  * @param props parametros do componente
  * @author bortes
  */
-function NotFoundComponent(props) {
+function NotFound(props) {
     return (
         <div className="d-flex flex-row align-items-center justify-content-center">
             <div className="text-center m-3">
@@ -32,4 +32,4 @@ function NotFoundComponent(props) {
     );
 }
 
-export default NotFoundComponent;
+export default NotFound;

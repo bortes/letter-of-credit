@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/templates/royalui/template/vendors/ti-icons/css/themify-icons.css';
-import './assets/templates/royalui/template/vendors/base/vendor.bundle.base.css';
-import './assets/templates/royalui/template/css/style.css';
-import './index.css';
-
+import { BrowserRouter } from 'react-router-dom';
 import App from './screens/App';
 import ServiceWorker from './services/ServiceWorker';
 
+
+import './assets/templates/royalui/template/vendors/ti-icons/css/themify-icons.css';
+
 ReactDOM.render(
-    <App />,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
     document.getElementById('root')
 );
 
