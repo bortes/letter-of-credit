@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch } from "react-router-dom";
 import PrivateRouteComponent from '../../../components/Common/PrivateRoute';
-import ScreensTraderTradeForm from './Form';
+import ScreensTraderTradeForm from './Form/Form';
 import ScreensTraderTradeList from './List';
 import ScreensTraderDashboard from '../Dashboard';
 

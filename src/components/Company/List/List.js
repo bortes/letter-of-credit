@@ -12,8 +12,8 @@ function CompanyList(props) {
     const [list, setList] = useState([]);
 
     useEffect(() => {
-        ServiceCompany.get().then(response => setList(response.items))
-    });
+        ServiceCompany.get().then(response => setList(response))
+    }, []);
 
     return (
         <>

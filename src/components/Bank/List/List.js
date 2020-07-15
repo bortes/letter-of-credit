@@ -12,8 +12,8 @@ function BankList(props) {
     const [list, setList] = useState([]);
 
     useEffect(() => {
-        ServiceBank.get().then(response => setList(response.items))
-    });
+        ServiceBank.get().then(response => setList(response))
+    }, []);
 
     return (
         <>
