@@ -100,33 +100,33 @@ function ScreensTraderTradeForm(props) {
 
     const handleOperation = (selected) => {
         setSelectedOperation(selected);
-        console.log('handleOperation', selected);
+        // console.log('handleOperation', selected);
 
     }
     const handleCommodity = (selected) => {
         setSelectedCommodity(selected);
-        console.log('handleCommodity', selected);
+        // console.log('handleCommodity', selected);
 
     }
     const handleSeller = (selected) => {
         setSelectedSeller(selected);
-        console.log('handleSeller', selected);
+        // console.log('handleSeller', selected);
 
     }
     const handleBuyer = (selected) => {
         setSelectedBuyer(selected);
-        console.log('handleBuyer', selected);
+        // console.log('handleBuyer', selected);
 
     }
     const handleSendFrom = (selected) => {
-        console.log('handleSendFrom', selected);
+        setSelectedSendFrom(selected);
+        // console.log('handleSendFrom', selected);
 
     }
     const handleSendTo = (selected) => {
-        console.log('handleSendTo', selected);
+        setSelectedSendTo(selected);
+        // console.log('handleSendTo', selected);
     }
-
-    console.log('ScreensTraderTradeForm')
 
     return (
         <>

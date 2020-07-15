@@ -44,7 +44,7 @@ function StepSendFrom(props) {
 
     return (
         <>
-            <Typography component="h4" variant="h6">Defnida o porto de zarpagem.</Typography>
+            <Typography component="h4" variant="h6">Defina o porto de zarpagem.</Typography>
 
             <div className="row mt-4">
                 {items.map((item, index) => (
@@ -53,7 +53,7 @@ function StepSendFrom(props) {
                             <CardActionArea className={currentSendFrom.includes(item.port_id) ? '' : 'data-disabled'} onClick={e => handleChange(e, item)}>
                                 <CardMedia image={require(`../../../../assets/countries/${item.country_id}/60.png`)} title={item.name} />
                                 <CardContent>
-                                    <Typography variant="h6" component="h6">{item.name}</Typography>
+                                    <Typography variant="h6" component="h6">Porto de {item.name}</Typography>
                                 </CardContent>
                             </CardActionArea>
                         </Card>
